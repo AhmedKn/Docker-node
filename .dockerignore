@@ -1,0 +1,8 @@
+./backend/node_modules
+./backend/Dockerfile
+./docker-compose.dev.yml
+./docker-compose.prod.yml
+./docker-compose.yml
+./.git
+./client/node_modules
+./client/Dockerfile

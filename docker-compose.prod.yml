@@ -1,0 +1,37 @@
+version : "3"
+services:
+  node-app:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      args:
+        NODE_ENV: production 
+    environment:
+      - NODE_ENV=production
+      - MONGO_USERNAME=ahmed
+      - MONGO_PASSWORD=1234
+      - MONGO_PORT=27017
+    command: npm start
+  
+  react-app-prod:
+    build:
+      context: ./client
+      dockerfile: Dockerfile.prod
+    ports:
+    - "8080:80"
+    volumes:
+      - ./client/default.conf:/etc/nginx/default.conf:ro
+    command: ['nginx', '-g', 'daemon off;']
+    environment:
+    - NGINX_PORT=80
+    depends_on:
+      - node-app
+
+  mongo:
+    ports:
+       - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=ahmed
+      - MONGO_INITDB_ROOT_PASSWORD=1234
+
+    

@@ -1,0 +1,5 @@
+module.exports={
+USERNAME:process.env.MONGO_INITDB_ROOT_USERNAME,
+PASSWORD: process.env.MONGO_INITDB_ROOT_PASSWORD,
+PORT:process.env.MONGO_PORT
+}
