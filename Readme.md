@@ -91,4 +91,4 @@ sudo certbot --nginx -d domain.com -d www.domain.com -d sub.domain.com
 certbot renew --dry-run
 ```
 ## Result 
-![alt text](https://github.com/AhmedKn/Docker-node/blob/master/client.png?raw=true)
+![alt text](https://github.com/AhmedKn/Docker-node/blob/master/assets/client.png?raw=true)
